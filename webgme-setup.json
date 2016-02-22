@@ -1,4 +1,25 @@
 {
-  "components": {},
-  "dependencies": {}
+  "components": {
+    "seeds": {
+      "PetriNet": {
+        "src": "src\\seeds\\PetriNet"
+      }
+    },
+    "plugins": {
+      "PetriNetExporter": {
+        "src": "src\\plugins\\PetriNetExporter",
+        "test": "test\\plugins\\PetriNetExporter"
+      }
+    },
+    "decorators": {
+      "PetriNetDecorator": {
+        "src": "src\\decorators\\PetriNetDecorator"
+      }
+    }
+  },
+  "dependencies": {
+    "seeds": {},
+    "plugins": {},
+    "decorators": {}
+  }
 }
