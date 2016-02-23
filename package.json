@@ -9,7 +9,7 @@
       
   },
   "peerDependencies": {
-    "webgme": "latest"
+    "webgme": "1.x"
   },
   "devDependencies": {
     "mocha": "^2.2.5",
