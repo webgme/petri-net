@@ -1,5 +1,5 @@
 {
-  "name": "webgme-petri-net",
+  "name": "petri-net",
   "scripts": {
     "start": "node app.js",
     "test": "node ./node_modules/mocha/bin/mocha --recursive test"
