@@ -7,8 +7,6 @@ WebGME apps require [NodeJS](https://nodejs.org/en/download/) and [MongDB](https
 
 1. `npm install`
 
-2. `npm install webgme` *
+2. `npm install webgme` (From version 3 of npm [peer-dependencies](https://nodejs.org/en/blog/npm/peer-dependencies/) need to be installed explicitly.)
 
 3. `npm start`
-
-*From version 3 of npm [peer-dependencies](https://nodejs.org/en/blog/npm/peer-dependencies/) need to be installed explicitly.
