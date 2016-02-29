@@ -89,7 +89,7 @@ define(['js/Constants',
         }
 
         if(Object.keys(svgCache || {}).length === 0){
-            var _metaAspectTypes = PetriNetMETA.getMetaTypes();
+            var _metaAspectTypes = PetriNetMETA.getDecoredMETATypes();
 
             for (var m in _metaAspectTypes) {
                 // TODO: use the right code to do this
@@ -254,7 +254,8 @@ define(['js/Constants',
     PetriNetDecoratorCore.prototype.getTokenSVG = function () {
         var control = this._control,
             gmeID = this._metaInfo[CONSTANTS.GME_ID],
-            color = control._client.getNode(gmeID).getAttribute(PetriNetDecoratorConstants.COLOR);
+            node = control._client.getNode(gmeID),
+            color = node ? node.getAttribute(PetriNetDecoratorConstants.COLOR) : '';
 
         TokenBase.find('ellipse').attr('fill', color);
 
@@ -298,7 +299,8 @@ define(['js/Constants',
             gmeID = this._metaInfo[CONSTANTS.GME_ID],
             isTypePlace = PetriNetMETA.TYPE_INFO.isPlace(gmeID),
             isTypeTransition = PetriNetMETA.TYPE_INFO.isTransition(gmeID),
-            name = control._client.getNode(gmeID).getAttribute(nodePropertyNames.Attributes.name);
+            node = control._client.getNode(gmeID),
+            name = node ? node.getAttribute(nodePropertyNames.Attributes.name) : '';
 
         if (this.skinParts.$name) {
 

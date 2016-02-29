@@ -18,6 +18,13 @@ define(['underscore'], function (_underscore) {
             'Transition': 'Transition',
             'Transition2Place': 'Transition2Place'
         },
+        DecoredMETATypes = {
+            'PetriNetDiagram': 'PetriNetDiagram',
+            'PetriNetDiagramFolder': 'PetriNetDiagramFolder',
+            'PetriNetMetaModel': 'PetriNetMetaModel',
+            'Place': 'Place',
+            'Transition': 'Transition'
+        },
         client = WebGMEGlobal.Client;
 
     function _getMetaTypes() {
@@ -29,6 +36,22 @@ define(['underscore'], function (_underscore) {
         for (i = 0; i < metaNodes.length; i += 1) {
             name = metaNodes[i].getAttribute('name');
             if (META_TYPES[name]) {
+                dictionary[name] = metaNodes[i].getId();
+            }
+        }
+
+        return dictionary;
+    }
+
+    function _getDecoredMETATypes() {
+        var metaNodes = client.getAllMetaNodes(),
+            dictionary = {},
+            i,
+            name;
+
+        for (i = 0; i < metaNodes.length; i += 1) {
+            name = metaNodes[i].getAttribute('name');
+            if (DecoredMETATypes[name]) {
                 dictionary[name] = metaNodes[i].getId();
             }
         }
@@ -98,6 +121,7 @@ define(['underscore'], function (_underscore) {
     return {
         getMetaTypes: _getMetaTypes,
         getMetaTypesOf: _getMetaTypesOf,
+        getDecoredMETATypes: _getDecoredMETATypes,
         TYPE_INFO: {
             isArc: _isArc,
             isFCO: _isFCO,
