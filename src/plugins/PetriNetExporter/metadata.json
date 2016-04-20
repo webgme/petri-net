@@ -1,0 +1,13 @@
+{
+  "id": "PetriNetExporterPlugin",
+  "name": "Petri Net Exporter Plugin",
+  "version": "2.0.0",
+  "description": "Generates source code in different languages for executable petri-net.",
+  "icon": {
+    "src": "",
+    "class": "fa fa-code"
+  },
+  "disableServerSideExecution": false,
+  "disableBrowserSideExecution": false,
+  "configStructure": []
+}

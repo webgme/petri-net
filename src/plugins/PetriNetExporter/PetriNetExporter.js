@@ -4,13 +4,17 @@
 
 define(['plugin/PluginConfig',
         'plugin/PluginBase',
+	    'text!./metadata.json',
         'common/util/xmljsonconverter'
-], function (PluginConfig, PluginBase, Converter) {
+], function (PluginConfig, PluginBase, pluginMetadata, Converter) {
 
     'use strict';
 
+    pluginMetadata = JSON.parse(pluginMetadata);
+
     var PetriNetExporterPlugin = function () {
         PluginBase.call(this);
+	    this.pluginMetadata = pluginMetadata;
         this.modelID = 0;
         this.petriNetDiagrams = {};
         this.diagrams = [];
@@ -21,12 +25,10 @@ define(['plugin/PluginConfig',
         this.childrenLUT = {};
     };
 
+    PetriNetExporterPlugin.metadata = pluginMetadata;
+
     PetriNetExporterPlugin.prototype = Object.create(PluginBase.prototype);
     PetriNetExporterPlugin.prototype.constructor = PetriNetExporterPlugin;
-
-    PetriNetExporterPlugin.prototype.getName = function () {
-        return 'PetriNetExporter';
-    };
 
     PetriNetExporterPlugin.prototype.main = function (callback) {
 
