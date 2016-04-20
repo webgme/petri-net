@@ -11,7 +11,6 @@ define(['plugin/PluginConfig',
     'use strict';
 
     pluginMetadata = JSON.parse(pluginMetadata);
-
     var PetriNetExporterPlugin = function () {
         PluginBase.call(this);
 	    this.pluginMetadata = pluginMetadata;

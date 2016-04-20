@@ -1,5 +1,5 @@
 {
-  "id": "PetriNetExporterPlugin",
+  "id": "PetriNetExporter",
   "name": "Petri Net Exporter Plugin",
   "version": "2.0.0",
   "description": "Generates source code in different languages for executable petri-net.",
