@@ -59,6 +59,14 @@ define(['underscore'], function (_underscore) {
         return dictionary;
     }
 
+    function safeTypeCheck(id, metaId) {
+        if (typeof metaId === 'string') {
+            return client.isTypeOf(id, metaId);
+        } else {
+            return false;
+        }
+    }
+
     function _getMetaTypesOf(objId) {
         var orderedMetaList = Object.keys(META_TYPES).sort(),
             metaDictionary = _getMetaTypes(),
@@ -66,7 +74,7 @@ define(['underscore'], function (_underscore) {
             result = [];
 
         for (i = 0; i < orderedMetaList.length; i += 1) {
-            if (client.isTypeOf(objId, metaDictionary[orderedMetaList[i]])) {
+            if (safeTypeCheck(objId, metaDictionary[orderedMetaList[i]])) {
                 result.push(orderedMetaList[i]);
             }
         }
@@ -89,31 +97,31 @@ define(['underscore'], function (_underscore) {
 
     //META ASPECT TYPE CHECKING
     var _isArc = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Arc]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Arc]);
     };
     var _isFCO = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.FCO]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.FCO]);
     };
     var _isPetriNetDiagram = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.PetriNetDiagram]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.PetriNetDiagram]);
     };
     var _isPetriNetDiagramFolder = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.PetriNetDiagramFolder]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.PetriNetDiagramFolder]);
     };
     var _isPetriNetMetaModel = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.PetriNetMetaModel]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.PetriNetMetaModel]);
     };
     var _isPlace = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Place]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Place]);
     };
     var _isPlace2Transition = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Place2Transition]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Place2Transition]);
     };
     var _isTransition = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Transition]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Transition]);
     };
     var _isTransition2Place = function (objID) {
-        return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Transition2Place]);
+        return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Transition2Place]);
     };
 
 
