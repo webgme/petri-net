@@ -1,0 +1,17 @@
+{
+    "type": "Library",
+    "name": "PetriNet",
+    "description": "Petri Net library",
+    "seed": "PetriNet",
+    "initCode": "./init_code.py",
+    "nodeTypes": [
+        "PetriNetDiagramFolder"
+    ],
+    "models": [
+        {
+            "name": "Example1",
+            "description": "Simple Petri-Net model",
+            "path": "src/models/PetriNetExamples.webgmexm"
+        }
+    ]
+}
