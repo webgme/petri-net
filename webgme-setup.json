@@ -15,11 +15,27 @@
       "PetriNetDecorator": {
         "src": "src/decorators/PetriNetDecorator"
       }
+    },
+    "addons": {},
+    "layouts": {},
+    "routers": {},
+    "visualizers": {
+      "CompositeViz": {
+        "src": "panels/CompositeViz/CompositeVizPanel",
+        "title": "CompositeViz",
+        "panel": "src/visualizers/panels/CompositeViz",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/CompositeViz"
+      }    
     }
   },
   "dependencies": {
     "seeds": {},
     "plugins": {},
-    "decorators": {}
+    "decorators": {},
+    "addons": {},
+    "layouts": {},
+    "routers": {},
+    "visualizers": {}
   }
 }
