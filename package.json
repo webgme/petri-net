@@ -15,8 +15,7 @@
   },
   "version": "1.0.0",
   "dependencies": {
-    "webgme-composite-viz": "github:brollb/webgme-composite-viz",
-    "webgme-consolidated-viz": "github:brollb/webgme-composite-viz"
+    "webgme-composite-viz": "^1.0.0"
   },
   "peerDependencies": {
     "webgme": "^2.42.0"
