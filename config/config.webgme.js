@@ -13,7 +13,7 @@ config.seedProjects.basePaths.push(__dirname + '/../src/seeds/PetriNet');
 
 
 
-config.visualization.panelPaths.push(__dirname + '/../src/visualizers/panels');
+config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-composite-viz/src/visualizers/panels');
 
 
 
@@ -22,8 +22,12 @@ config.visualization.panelPaths.push(__dirname + '/../src/visualizers/panels');
 config.visualization.visualizerDescriptors.push(__dirname + '/../src/visualizers/Visualizers.json');
 // Add requirejs paths
 config.requirejsPaths = {
+  'CompositeViz': 'panels/CompositeViz/CompositeVizPanel',
   'panels': './src/visualizers/panels',
   'widgets': './src/visualizers/widgets',
+  'panels/CompositeViz': './node_modules/webgme-composite-viz/src/visualizers/panels/CompositeViz',
+  'widgets/CompositeViz': './node_modules/webgme-composite-viz/src/visualizers/widgets/CompositeViz',
+  'webgme-composite-viz': './node_modules/webgme-composite-viz/src/common',
   'petri-net': './src/common'
 };
 
